@@ -94,7 +94,7 @@ class PasswordRecovery extends Component {
             email: emailForPassReset
             }
 
-            let response = await fetch("http://localhost:9000/api/auth/forgotpwd", {
+            let response = await fetch("https://appcademix.onrender.com/api/auth/forgotpwd", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"
@@ -151,7 +151,7 @@ class PasswordRecovery extends Component {
             password: this.state.password,
         }
         try {
-            let response = await fetch("http://localhost:9000/api/auth/register", {
+            let response = await fetch("https://appcademix.onrender.com/api/auth/register", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"

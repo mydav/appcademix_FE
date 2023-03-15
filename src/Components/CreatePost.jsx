@@ -134,7 +134,7 @@ class CreatePost extends Component {
         }
         try {
             var id;
-            let response = await fetch("http://localhost:9000/api/posts/" + localStorage.getItem("username"), {
+            let response = await fetch("https://appcademix.onrender.com/api/posts/" + localStorage.getItem("username"), {
                 method: "POST",
                 headers: {
                     "Authorization": "Bearer " + localStorage.getItem("access_token"),
@@ -149,7 +149,7 @@ class CreatePost extends Component {
                 this.setState({newId: id})
                 let fd = new FormData();
                 fd.append("postImage", this.state.selectedFile)
-                let fileUploaded = await fetch("http://localhost:9000/api/posts/image/" + id + "/" + localStorage.getItem("username"), {
+                let fileUploaded = await fetch("https://appcademix.onrender.com/api/posts/image/" + id + "/" + localStorage.getItem("username"), {
                     method: "POST",
                     headers: {
                         "Authorization": "Bearer " + localStorage.getItem("access_token")
@@ -166,7 +166,7 @@ class CreatePost extends Component {
             
             console.log("id", newId,"body", tagBody )
 
-                let tagResponse = await fetch("http://localhost:9000/api/posts/hastag/" + newId, {
+                let tagResponse = await fetch("https://appcademix.onrender.com/api/posts/hastag/" + newId, {
                     method: "POST",
                     headers: {
                         // "Authorization": "Bearer " + localStorage.getItem("access_token"),

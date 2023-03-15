@@ -159,9 +159,9 @@ try {
     let replyBody ={
         reply: this.state.replyInput
     }
-    // `http://localhost:9000/api/reply/${commentId}`
+    // `https://appcademix.onrender.com/api/reply/${commentId}`
     // /api/reply/:commentId/:replyId'
-    let response = await fetch(`http://localhost:9000/api/reply/${commentId}/${this.state.replyId}`,{
+    let response = await fetch(`https://appcademix.onrender.com/api/reply/${commentId}/${this.state.replyId}`,{
         method: "PUT",
         headers: {
             "Authorization": "Bearer " + this.props.accessToken,
@@ -193,7 +193,7 @@ deleteReplyComment = async () => {
  
     try {
       const {  commentIdForDelete, replyIdForDelete } = this.state
-        let response = await fetch(`http://localhost:9000/api/reply/${commentIdForDelete}/${replyIdForDelete}`, {
+        let response = await fetch(`https://appcademix.onrender.com/api/reply/${commentIdForDelete}/${replyIdForDelete}`, {
             method: "DELETE",
             headers: {
                 "Authorization": "Bearer " + this.props.accessToken,

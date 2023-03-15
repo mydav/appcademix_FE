@@ -75,7 +75,7 @@ class PostPage extends Component {
     filterby = async (params) => {
         try {
             if (params) {
-                let response = await fetch(`http://localhost:9000/api/posts?sort=${params}&number=1`)
+                let response = await fetch(`https://appcademix.onrender.com/api/posts?sort=${params}&number=1`)
                 let posts = await response.json()
                 const newPost = posts.postsList
                 this.setState({
@@ -119,7 +119,7 @@ class PostPage extends Component {
 
     fetchPosts = async () => {
         try {
-            let response = await fetch("http://localhost:9000/api/posts?sort=ratingsCount")
+            let response = await fetch("https://appcademix.onrender.com/api/posts?sort=ratingsCount")
             let posts = await response.json()
             console.log("all posts", posts)
             const newPosts = posts.postsList

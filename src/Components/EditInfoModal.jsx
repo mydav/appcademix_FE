@@ -41,7 +41,7 @@ class EditInfoModal extends Component {
 
     componentDidMount = async () => {
         try {
-            let response = await fetch("http://localhost:9000/api/users/" + localStorage.getItem("username"))
+            let response = await fetch("https://appcademix.onrender.com/api/users/" + localStorage.getItem("username"))
             let profile = await response.json()
             this.setState({
                 firstname: this.capFirst(profile.firstname),
@@ -66,7 +66,7 @@ class EditInfoModal extends Component {
             lastname: this.state.lastname
         }
         try {
-            let response = await fetch("http://localhost:9000/api/users/" + localStorage.getItem("username"), {
+            let response = await fetch("https://appcademix.onrender.com/api/users/" + localStorage.getItem("username"), {
                 method: "PUT",
                 headers: {
                     "Authorization": "Bearer " + localStorage.getItem("access_token"),
@@ -79,7 +79,7 @@ class EditInfoModal extends Component {
                 let fd = new FormData();
                 fd.append("profile", this.state.selectedFile)
                 try {
-                    let fileUploaded = await fetch("http://localhost:9000/api/users/" + localStorage.getItem("username") + "/image", {
+                    let fileUploaded = await fetch("https://appcademix.onrender.com/api/users/" + localStorage.getItem("username") + "/image", {
                         method: "POST",
                         headers: {
                             "Authorization": "Bearer " + localStorage.getItem("access_token")

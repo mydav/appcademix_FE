@@ -59,8 +59,8 @@ class RatingsPage extends Component {
 
   countUpvotes = async id => { 
     try {
-      //http://localhost:9000/api/ratings/5e72afef19ef022fd996c4ef
-      const allUpVotes = await fetch(`http://localhost:9000/api/ratings/${id}`);
+      //https://appcademix.onrender.com/api/ratings/5e72afef19ef022fd996c4ef
+      const allUpVotes = await fetch(`https://appcademix.onrender.com/api/ratings/${id}`);
       const response = await allUpVotes.json();
       this.setState({
         upVoteCount: this.props.count
@@ -84,7 +84,7 @@ class RatingsPage extends Component {
   upRatePost = async () => {
     try {
       const response = await fetch(
-        `http://localhost:9000/api/ratings/${
+        `https://appcademix.onrender.com/api/ratings/${
           this.props.id
         }/${localStorage.getItem("username")}`,
         {
@@ -117,7 +117,7 @@ class RatingsPage extends Component {
   downRatePost = async () => {
     try {
       const response = await fetch(
-        `http://localhost:9000/api/ratings/${
+        `https://appcademix.onrender.com/api/ratings/${
           this.props.id
         }/${localStorage.getItem("username")}`,
         {

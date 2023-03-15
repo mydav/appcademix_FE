@@ -53,12 +53,12 @@ class ProfilePage extends Component {
 
     initialFetcher = async () => {
         try {
-            let response = await fetch("http://localhost:9000/api/users/" + this.props.match.params.username)
+            let response = await fetch("https://appcademix.onrender.com/api/users/" + this.props.match.params.username)
             if (response.status === 500)
                 this.props.history.push("/")
             let profile = await response.json()
             console.log(profile)
-            response = await fetch("http://localhost:9000/api/posts/username/" + this.props.match.params.username)
+            response = await fetch("https://appcademix.onrender.com/api/posts/username/" + this.props.match.params.username)
             let posts = await response.json()
             posts.sort(function (a, b) { return b.ratings.length - a.ratings.length })
             this.setState({

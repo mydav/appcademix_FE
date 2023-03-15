@@ -239,7 +239,7 @@ Do you really want to Delete this comment?
   
   }
   else{
-  let response = await fetch(`http://localhost:9000/api/rate/comment/${id}`, {
+  let response = await fetch(`https://appcademix.onrender.com/api/rate/comment/${id}`, {
     method: "POST",
     headers: {
       Authorization: "Bearer " + this.props.accessToken
@@ -280,9 +280,9 @@ Do you really want to Delete this comment?
           let replyBody = {
             reply: this.state.replyMsg
           };
-          // http://localhost:9000/api/reply/commentID
+          // https://appcademix.onrender.com/api/reply/commentID
           let response = await fetch(
-            "http://localhost:9000/api/reply/" + this.state.commentId,
+            "https://appcademix.onrender.com/api/reply/" + this.state.commentId,
             {
               method: "POST",
               headers: {
@@ -335,7 +335,7 @@ Do you really want to Delete this comment?
 
         const {  commentId, commentInputForEdit, postId } = this.state
         let bodyForPUT = { comment: commentInputForEdit }
-        let response = await fetch(`http://localhost:9000/api/comments/${postId}/${this.props.userInfo.username}/${commentId}`, {
+        let response = await fetch(`https://appcademix.onrender.com/api/comments/${postId}/${this.props.userInfo.username}/${commentId}`, {
             method: "PUT",
             headers: {
                 "Authorization": "Bearer " + this.props.accessToken,
@@ -366,7 +366,7 @@ deleteComment = async (id) => {
       
       const {  commentForDeleteId , postId} = this.state
       console.log(id, "id")
-        let response = await fetch(`http://localhost:9000/api/comments/${id}/posts/${postId}?username=${this.props.userInfo.username}`, {
+        let response = await fetch(`https://appcademix.onrender.com/api/comments/${id}/posts/${postId}?username=${this.props.userInfo.username}`, {
             method: "DELETE",
             headers: {
                 "Authorization": "Bearer " + this.props.accessToken,

@@ -399,14 +399,14 @@ class PostModal extends Component {
 
     fetchPost = async() => {
         try {
-            await fetch("http://localhost:9000/api/posts/" + this.props.post._id)
+            await fetch("https://appcademix.onrender.com/api/posts/" + this.props.post._id)
         } catch (e) {
             console.log(e)
         }
     }
 
     rateComment = async (id) => {
-        let response = await fetch(`http://localhost:9000/api/rate/comment/${id}`, {
+        let response = await fetch(`https://appcademix.onrender.com/api/rate/comment/${id}`, {
             method: "POST",
             headers: {
                 "Authorization": "Bearer " + this.props.accessToken
@@ -418,7 +418,7 @@ class PostModal extends Component {
   getAllComments = async () => {
     try {
       let response = await fetch(
-        `http://localhost:9000/api/comments/${this.props.post._id}?sort=updatedAt`
+        `https://appcademix.onrender.com/api/comments/${this.props.post._id}?sort=updatedAt`
       );
       let comments = await response.json();
       //    let sortedComments = comments.sort((a,b) =>b.createdAt - a.createdAt)
@@ -450,7 +450,7 @@ class PostModal extends Component {
       } = this.state;
       let bodyForPUT = { comment: commentForEdit };
       let response = await fetch(
-        `http://localhost:9000/api/comments/${commentForEditPostID}/${this.props.userInfo.username}/${commentForEditID}`,
+        `https://appcademix.onrender.com/api/comments/${commentForEditPostID}/${this.props.userInfo.username}/${commentForEditID}`,
         {
           method: "PUT",
           headers: {
@@ -478,7 +478,7 @@ class PostModal extends Component {
     try {
       const { commentForEditID, commentForEditPostID } = this.state;
       let response = await fetch(
-        `http://localhost:9000/api/comments/${commentForEditID}/posts/${commentForEditPostID}?username=${this.props.userInfo.username}`,
+        `https://appcademix.onrender.com/api/comments/${commentForEditID}/posts/${commentForEditPostID}?username=${this.props.userInfo.username}`,
         {
           method: "DELETE",
           headers: {
@@ -509,7 +509,7 @@ class PostModal extends Component {
       };
       try {
         let response = await fetch(
-          "http://localhost:9000/api/comments/" +
+          "https://appcademix.onrender.com/api/comments/" +
             this.props.post._id +
             "/" +
             localStorage.getItem("username"),

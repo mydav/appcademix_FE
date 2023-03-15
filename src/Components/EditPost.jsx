@@ -92,11 +92,11 @@ class EditPost extends Component {
 
     componentDidMount = async() => {
         const id = this.props.match.params.postId
-        http://localhost:9000/api/posts/5e8340a7fcdfaf1458263aa2
+        https://appcademix.onrender.com/api/posts/5e8340a7fcdfaf1458263aa2
 
        try {
 
-        const resp = await fetch("http://localhost:9000/api/posts/" + id)
+        const resp = await fetch("https://appcademix.onrender.com/api/posts/" + id)
         const data = await resp.json()
         if(resp.ok){
             this.setState({
@@ -150,7 +150,7 @@ class EditPost extends Component {
         }
         try {
             const id = this.props.match.params.postId
-            let response = await fetch("http://localhost:9000/api/posts/" + localStorage.getItem("username") + "/"+ id, {
+            let response = await fetch("https://appcademix.onrender.com/api/posts/" + localStorage.getItem("username") + "/"+ id, {
                 method: "PUT",
                 headers: {
                     "Authorization": "Bearer " + localStorage.getItem("access_token"),
@@ -165,7 +165,7 @@ class EditPost extends Component {
                 this.setState({newId: id})
                 let fd = new FormData();
                 fd.append("postImage", this.state.selectedFile)
-                let fileUploaded = await fetch("http://localhost:9000/api/posts/image/" + id + "/" + localStorage.getItem("username"), {
+                let fileUploaded = await fetch("https://appcademix.onrender.com/api/posts/image/" + id + "/" + localStorage.getItem("username"), {
                     method: "POST",
                     headers: {
                         "Authorization": "Bearer " + localStorage.getItem("access_token")
@@ -182,7 +182,7 @@ class EditPost extends Component {
             
             console.log("id", newId,"body", tagBody )
 
-                let tagResponse = await fetch("http://localhost:9000/api/posts/hastag/" + newId, {
+                let tagResponse = await fetch("https://appcademix.onrender.com/api/posts/hastag/" + newId, {
                     method: "POST",
                     headers: {
                         // "Authorization": "Bearer " + localStorage.getItem("access_token"),

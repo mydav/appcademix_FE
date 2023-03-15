@@ -24,8 +24,8 @@ class Register extends Component {
                             <Container>
                                 <FormGroup>
                                     <h4 className="text-center">Register with:</h4>
-                                    <Button href="http://localhost:9000/api/auth/google/callback" className="fab fa-google m-2"></Button>
-                                    <Button href="http://localhost:9000/api/auth/facebook/callback" className="fab fa-facebook-f m-2"></Button>
+                                    <Button href="https://appcademix.onrender.com/api/auth/google/callback" className="fab fa-google m-2"></Button>
+                                    <Button href="https://appcademix.onrender.com/api/auth/facebook/callback" className="fab fa-facebook-f m-2"></Button>
                                 </FormGroup>
                             </Container>
                             <h4 className="text-center">OR</h4>
@@ -81,7 +81,7 @@ class Register extends Component {
             email: this.state.email
         }
         try {
-            let response = await fetch("http://localhost:9000/api/auth/register", {
+            let response = await fetch("https://appcademix.onrender.com/api/auth/register", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"

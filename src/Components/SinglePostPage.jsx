@@ -256,7 +256,7 @@ class SinglePostPage extends Component {
 
     getAllComments = async () => {
         try {
-            let response = await fetch(`http://localhost:9000/api/comments/${this.state.post._id}?sort=updatedAt`)
+            let response = await fetch(`https://appcademix.onrender.com/api/comments/${this.state.post._id}?sort=updatedAt`)
             let comments = await response.json()
             //    let sortedComments = comments.sort((a,b) =>b.createdAt - a.createdAt)
             this.setState({
@@ -281,7 +281,7 @@ class SinglePostPage extends Component {
         try {
             const { commentForEdit, commentForEditID, commentForEditPostID } = this.state
             let bodyForPUT = { comment: commentForEdit }
-            let response = await fetch(`http://localhost:9000/api/comments/${commentForEditPostID}/${this.props.userInfo.username}/${commentForEditID}`, {
+            let response = await fetch(`https://appcademix.onrender.com/api/comments/${commentForEditPostID}/${this.props.userInfo.username}/${commentForEditID}`, {
                 method: "PUT",
                 headers: {
                     "Authorization": "Bearer " + this.props.accessToken,
@@ -306,7 +306,7 @@ class SinglePostPage extends Component {
         // api/comments/:commentid/posts/:postid?username=:username
         try {
             const { commentForEditID, commentForEditPostID } = this.state
-            let response = await fetch(`http://localhost:9000/api/comments/${commentForEditID}/posts/${commentForEditPostID}?username=${this.props.userInfo.username}`, {
+            let response = await fetch(`https://appcademix.onrender.com/api/comments/${commentForEditID}/posts/${commentForEditPostID}?username=${this.props.userInfo.username}`, {
                 method: "DELETE",
                 headers: {
                     "Authorization": "Bearer " + this.props.accessToken,
@@ -329,7 +329,7 @@ class SinglePostPage extends Component {
     fetchPost = async () => {
         try {
             console.log("HEREEE")
-            let response = await fetch("http://localhost:9000/api/posts/" + this.props.match.params.id)
+            let response = await fetch("https://appcademix.onrender.com/api/posts/" + this.props.match.params.id)
             let post = await response.json()
             this.setState({
                 post: post,
@@ -349,7 +349,7 @@ class SinglePostPage extends Component {
                 postid: this.state.post._id
             }
             try {
-                let response = await fetch("http://localhost:9000/api/comments/" + this.state.post._id + "/" + localStorage.getItem("username"), {
+                let response = await fetch("https://appcademix.onrender.com/api/comments/" + this.state.post._id + "/" + localStorage.getItem("username"), {
                     method: "POST",
                     headers: {
                         "Authorization": "Bearer " + localStorage.getItem("access_token"),
@@ -394,7 +394,7 @@ class SinglePostPage extends Component {
                         post: post
                     })
                     await fetch(
-                        `http://localhost:9000/api/ratings/${
+                        `https://appcademix.onrender.com/api/ratings/${
                         post._id
                         }/${this.props.userInfo.username}`,
                         {
@@ -421,7 +421,7 @@ class SinglePostPage extends Component {
                         post: post
                     })
                     await fetch(
-                        `http://localhost:9000/api/ratings/${
+                        `https://appcademix.onrender.com/api/ratings/${
                         post._id
                         }/${this.props.userInfo.username}`,
                         {

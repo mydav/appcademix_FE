@@ -114,8 +114,8 @@ class NewPostMetaGrab extends Component {
    
    try {
     
-     // http://localhost:9000/api/metatag?url=https://www.youtube.com/watch?v=93p3LxR9xfM
-     const response = await fetch(`http://localhost:9000/api/metatag?url=${url}`)
+     // https://appcademix.onrender.com/api/metatag?url=https://www.youtube.com/watch?v=93p3LxR9xfM
+     const response = await fetch(`https://appcademix.onrender.com/api/metatag?url=${url}`)
      if (response.ok) {
        const urlData = await response.json()
        console.log(urlData)

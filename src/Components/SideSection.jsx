@@ -50,9 +50,9 @@ class SideSection extends Component {
 
     componentDidMount = async () => {
         try {
-            let response = await fetch("http://localhost:9000/api/posts/all")
+            let response = await fetch("https://appcademix.onrender.com/api/posts/all")
             let posts = await response.json()
-            response = await fetch("http://localhost:9000/api/users/")
+            response = await fetch("https://appcademix.onrender.com/api/users/")
             let users = await response.json()
             let tags = []
             posts.forEach(post => { if (post.tags[0]) tags.push(post.tags[0]) })
