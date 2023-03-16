@@ -29,7 +29,7 @@ code {
   color: white;
   border-radius: 8px;
   box-shadow: 3px 3px 7px 1px rgba(0, 0, 0, 0.52);
-  margin: 4em;
+  margin: 3em 0em 3em 0em;
 }
 
 .profile-img {
@@ -154,7 +154,7 @@ code {
 .create-post {
   background-color: white;
   padding: 2em;
-  margin: 3em;
+  /* margin: 3em; */
   box-shadow: 3px 3px 7px 1px rgba(0, 0, 0, 0.52);
   border-radius: 7px;
   max-width:500px !important;
